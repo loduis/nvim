@@ -1,5 +1,8 @@
 " https://neovim.io/doc/user/vim_diff.html#vim-differences
 
+" Active mouse
+set mouse=a
+
 " Set 8 lines to the cursor - when moving vertically using j/k
 set so=8
 
@@ -52,12 +55,15 @@ set cmdheight=2
 " set signcolumn=yes
 highlight SignColumn guibg=darkgrey
 
-" Always show the status line
-" set laststatus=2
-" set showcmd
-
-" Wild menu for tab file search
-" set wildmenu
+" Willcard Menu
 set path+=**
 set wildignore+=**/node_modules/**,**/vendor/**
 
+" Load the pluggins
+so ~/.config/nvim/plugins.vim
+
+" Load the mappings
+so ~/.config/nvim/maps.vim
+
+" Reload config on save vimrc
+autocmd BufWritePost *.vim :so $MYVIMRC
