@@ -3,6 +3,8 @@
 " Active mouse
 set mouse=a
 
+set noshowmode
+
 " Set 8 lines to the cursor - when moving vertically using j/k
 set so=8
 
