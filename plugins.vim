@@ -2,14 +2,18 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Themes
 Plug 'morhetz/gruvbox'
-Plug 'shinchu/lightline-gruvbox.vim'
+" Plug 'shinchu/lightline-gruvbox.vim'
 
 " syntax
 Plug 'sheerun/vim-polyglot'
 
 " status bar
-Plug 'maximbaz/lightline-ale'
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Plug 'maximbaz/lightline-ale'
+" Plug 'itchyny/lightline.vim'
+" Plug 'mengelbrecht/lightline-bufferline'
 
 " Tree
 Plug 'preservim/nerdtree'
@@ -37,41 +41,23 @@ call plug#end()
 
 " Themes
 colorscheme gruvbox
-let g:gruvbox_contrast_dark = "hard"
+let g:gruvbox_contrast_dark = 'hard'
 
-
-"  nerdtree
+" nerdtree
 let NERDTreeShowHidden=1
-let NERDTreeQuitOnOpen=1
 let NERDTreeAutoDeleteBuffer=1
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeMapOpenInTab='\t'
+let g:nerdtree_tabs_focus_on_files=1
+let g:NERDTreeChDirMode=2
 
-let g:lightline = {
-      \ 'active': {
-      \   'left': [['mode', 'paste'], [], ['relativepath', 'modified']],
-      \   'right': [['kitestatus'], ['filetype', 'percent', 'lineinfo'], ['gitbranch']]
-      \ },
-      \ 'inactive': {
-      \   'left': [['inactive'], ['relativepath']],
-      \   'right': [['bufnum']]
-      \ },
-      \ 'component': {
-      \   'bufnum': '%n',
-      \   'inactive': 'inactive'
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head',
-      \   'kitestatus': 'kite#statusline'
-      \ },
-      \ 'colorscheme': 'gruvbox',
-      \ 'subseparator': {
-      \   'left': '',
-      \   'right': ''
-      \ }
-      \}
+" Airline configuration
+let g:airline_theme='gruvbox'
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline_skip_empty_sections = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " kite
 let g:kite_supported_languages = ['javascript', 'python']

@@ -44,7 +44,12 @@ set notimeout ttimeout ttimeoutlen=200
 
 " Display vertical rule
 set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+highlight ColorColumn ctermbg=0 guibg=grey
+highlight Normal guibg=none
+
+" highlight ColorColumn ctermbg=0 guibg=lightgrey
+autocmd FileType php setl cc=120
 
 " Set the terminal colors
 set guicursor=
@@ -69,3 +74,5 @@ so ~/.config/nvim/maps.vim
 
 " Reload config on save vimrc
 autocmd BufWritePost *.vim :so $MYVIMRC
+
+" set showtabline=2
