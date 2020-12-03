@@ -9,7 +9,11 @@ inoremap <c-s> <esc>:w<cr>a
 noremap <c-q> <esc>:q<cr>
 inoremap <c-q> <esc>:q<cr>
 
-" Sidebar
+" Paste from clipboard
+nnoremap <c-v> "+gP
+inoremap <c-v> "+gP
+
+" Sidebar NerdTree
 nnoremap <silent> <F3> :NERDTreeToggle<cr>
 inoremap <silent> <F3> <esc>:NERDTreeToggle<cr>
 nnoremap <silent> <F2> :NERDTreeFind<cr>
@@ -22,7 +26,7 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Use <c-space> to trigger completion.
 if &filetype == "javascript" || &filetype == "python"
-  inoremap <c-space> <C-x><C-u>
+  inoremap <c-space> <c-x><c-u>
 else
   inoremap <silent><expr> <c-space> coc#refresh()
 endif

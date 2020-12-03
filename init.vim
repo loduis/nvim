@@ -17,8 +17,8 @@ set hid
 
 " Indent options
 set smartindent
-set tabstop=4 softtabstop=4
-set shiftwidth=4
+set tabstop=2 softtabstop=2
+set shiftwidth=2
 set expandtab
 
 " Search text on file
@@ -48,15 +48,12 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=grey
 highlight Normal guibg=none
 
-" highlight ColorColumn ctermbg=0 guibg=lightgrey
-autocmd FileType php setl cc=120
-
 " Set the terminal colors
 set guicursor=
 set termguicolors
 
 " Command message height
-set cmdheight=2
+" set cmdheight=2
 
 " Paint ruler bar for sign on the left of editor
 " set signcolumn=yes
@@ -72,7 +69,8 @@ so ~/.config/nvim/plugins.vim
 " Load the mappings
 so ~/.config/nvim/maps.vim
 
-" Reload config on save vimrc
-autocmd BufWritePost *.vim :so $MYVIMRC
+" Load the function user defined
+so ~/.config/nvim/functions.vim
 
-" set showtabline=2
+" Load auto commands
+so ~/.config/nvim/commands.vim
