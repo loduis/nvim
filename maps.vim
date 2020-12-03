@@ -9,6 +9,13 @@ inoremap <c-s> <esc>:w<cr>a
 noremap <c-q> <esc>:q<cr>
 inoremap <c-q> <esc>:q<cr>
 
+" Copy to clipboard
+nnoremap Y gg0VGy<esc><c-o>
+vnoremap <c-c> "+y
+nnoremap <c-a> gg0VG
+inoremap <c-a> <esc>gg0VG
+
+
 " Paste from clipboard
 nnoremap <c-v> "+gP
 inoremap <c-v> "+gP
