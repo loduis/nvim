@@ -15,7 +15,6 @@ vnoremap <c-c> "+y
 nnoremap <c-a> gg0VG
 inoremap <c-a> <esc>gg0VG
 
-
 " Paste from clipboard
 nnoremap <c-v> "+gP
 inoremap <c-v> "+gP
@@ -38,15 +37,13 @@ else
   inoremap <silent><expr> <c-space> coc#refresh()
 endif
 
+" Terminal handle
+nnoremap <c-t> :call OpenTerminal()<cr>
 
-" Select all
-" nnoremap <C-a> gg0VG<esc>
-" inoremap <C-a> <esc>gg0VG<esc><c-o>a
+" Find filename
+nnoremap <c-p> :FZF<cr>
+inoremap <c-p> <esc>:FZF<cr>
 
-"Copy to clipboard
-
-" nnoremap <C-c> gg0VG"+y<esc>
-
-" Paste from clipboard
-" nnoremap <C-v> "+gP
-" inoremap <C-v> "+gP
+" Find content
+nnoremap <c-f> :Rg<cr>
+inoremap <c-f> <esc>:Rg<cr>

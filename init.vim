@@ -55,6 +55,9 @@ set termguicolors
 " Command message height
 " set cmdheight=2
 
+" Split to right
+set splitright
+
 " Paint ruler bar for sign on the left of editor
 " set signcolumn=yes
 highlight SignColumn guibg=darkgrey
@@ -63,14 +66,10 @@ highlight SignColumn guibg=darkgrey
 set path+=**
 set wildignore+=**/node_modules/**,**/vendor/**
 
-" Load the pluggins
-so ~/.config/nvim/plugins.vim
-
-" Load the mappings
-so ~/.config/nvim/maps.vim
-
-" Load the function user defined
-so ~/.config/nvim/functions.vim
-
-" Load auto commands
-so ~/.config/nvim/commands.vim
+augroup THE_CONFG
+    let root = stdpath('config')
+    autocmd!
+    for path in ['functions', 'plugins', 'maps', 'commands']
+        exec 'so '  root . '/' . path . '.vim'
+    endfor
+augroup END

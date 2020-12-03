@@ -67,3 +67,6 @@ autocmd FileType python let b:coc_suggest_disable = 1
 autocmd FileType javascript let b:coc_suggest_disable = 1
 autocmd FileType scss setl iskeyword+=@-@
 
+" FZF
+let $FZF_DEFAULT_COMMAND = 'rg --files --no-ignore-vcs --hidden --ignore-file ' . stdpath('config') . '/ignore.txt'
+let $FZF_DEFAULT_OPTS='--reverse'
