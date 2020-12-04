@@ -55,6 +55,9 @@ set termguicolors
 " Command message height
 " set cmdheight=2
 
+" Active clipboard
+set clipboard=unnamed
+
 " Split to right
 set splitright
 
@@ -66,10 +69,7 @@ highlight SignColumn guibg=darkgrey
 set path+=**
 set wildignore+=**/node_modules/**,**/vendor/**
 
-augroup THE_CONFG
-    let root = stdpath('config')
-    autocmd!
-    for path in ['functions', 'plugins', 'maps', 'commands']
-        exec 'so '  root . '/' . path . '.vim'
-    endfor
-augroup END
+so ~/.config/nvim/functions.vim
+so ~/.config/nvim/plugins.vim
+so ~/.config/nvim/maps.vim
+so ~/.config/nvim/commands.vim
