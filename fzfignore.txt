@@ -1,4 +1,5 @@
-
+*.lock
+.git/
 node_modules/
 vendor/
 storage/
