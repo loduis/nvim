@@ -1,3 +1,4 @@
+" From https://github.com/awesome-streamers/awesome-streamerrc/blob/master/ThePrimeagen/init.vim#L284
 fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e

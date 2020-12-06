@@ -24,6 +24,7 @@ set expandtab
 " Search text on file
 set ignorecase
 set smartcase
+set nohls
 
 " Text format
 set nowrap
@@ -42,6 +43,12 @@ set visualbell
 set t_vb=
 set notimeout ttimeout ttimeoutlen=200
 
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
 " Display vertical rule
 set colorcolumn=80
 
@@ -53,7 +60,7 @@ set guicursor=
 set termguicolors
 
 " Command message height
-" set cmdheight=2
+set cmdheight=2
 
 " Active clipboard
 set clipboard=unnamed
@@ -69,7 +76,8 @@ highlight SignColumn guibg=darkgrey
 set path+=**
 set wildignore+=**/node_modules/**,**/vendor/**
 
-so ~/.config/nvim/functions.vim
+so ~/.config/nvim/install.vim
 so ~/.config/nvim/plugins.vim
+so ~/.config/nvim/functions.vim
 so ~/.config/nvim/maps.vim
 so ~/.config/nvim/commands.vim

@@ -45,5 +45,5 @@ nnoremap <c-p> :FZF<cr>
 inoremap <c-p> <esc>:FZF<cr>
 
 " Find content
-nnoremap <c-f> :Rg<cr>
-inoremap <c-f> <esc>:Rg<cr>
+nnoremap <c-f> :Find<cr>
+inoremap <c-f> <esc>:Find<cr>

@@ -1,3 +1,5 @@
+" https://github.com/kiteco/vim-plugin/blob/master/DEVELOPMENT.md
+
 call plug#begin('~/.config/nvim/plugged')
 
 " Themes
@@ -59,14 +61,13 @@ let g:airline#extensions#whitespace#enabled = 1
 let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#enabled = 1
 
-" kite
+" kite config
 let g:kite_supported_languages = ['javascript', 'python']
 
-" coc
-autocmd FileType python let b:coc_suggest_disable = 1
-autocmd FileType javascript let b:coc_suggest_disable = 1
-autocmd FileType scss setl iskeyword+=@-@
-
-" FZF
+" fzf
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --ignore-file ' . stdpath('config') . '/fzfignore.txt'
 let $FZF_DEFAULT_OPTS='--reverse'
+set grepprg=rg\ --vimgrep
+
+" fugitive always vertical diffing
+set diffopt+=vertical

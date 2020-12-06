@@ -1,5 +1,14 @@
-" highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+" Rg
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --ignore-file ' . stdpath('config') . '/fzfignore.txt --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+
+" Set default php space
 autocmd FileType php setl cc=120 sw=4 ts=4
+
+" coc
+autocmd FileType python let b:coc_suggest_disable = 1
+autocmd FileType javascript let b:coc_suggest_disable = 1
+autocmd FileType scss setl iskeyword+=@-@
 
 augroup THE_CLEAN
     autocmd!
