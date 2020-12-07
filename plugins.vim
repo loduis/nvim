@@ -65,8 +65,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:kite_supported_languages = ['javascript', 'python']
 
 " fzf
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --ignore-file ' . stdpath('config') . '/fzfignore.txt'
-let $FZF_DEFAULT_OPTS='--reverse'
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --no-ignore-vcs --follow --ignore-file ' . stdpath('config') . '/fzfignore.txt'
+let $FZF_DEFAULT_OPTS='--reverse -e'
 set grepprg=rg\ --vimgrep
 
 " fugitive always vertical diffing
