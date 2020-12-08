@@ -21,7 +21,7 @@ fun! OpenTerminal()
     execute "q"
   else
     " open terminal
-    execute "vsp term://zsh"
+    execute "vsp term://bash"
 
     " turn off numbers
     execute "set nonu"
@@ -39,3 +39,39 @@ fun! OpenTerminal()
     startinsert!
   endif
 endfun
+
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --ignore-file ' . FZF_IGNORE . ' --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['-e', '--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+func Cursor()
+   let n_cur = col('.') - 1
+   let n_ind = indent(line('.'))
+   return [n_cur, n_ind]
+endfunc
+
+func Home()
+   let [n_cur, n_ind] = Cursor()
+   if n_cur > n_ind
+      normal ^
+   else
+      normal 0
+   endif
+endfunc
+
+" NerdTree open in tab on mouse double click
+function! OpenInTab(node)
+    call a:node.activate({'reuse': 'all', 'where': 't'})
+endfunction
+
+" if the currenct buffer is NerdTree move the next buffer
+function! NerdTreeTabKeep(command_str)
+  if (expand('%') =~# 'NERD_tree' && winnr('$') > 1)
+    exe "normal! \<c-w>\<c-w>"
+  endif
+  exe 'normal! ' . a:command_str . "\<cr>"
+endfunction

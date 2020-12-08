@@ -41,9 +41,19 @@ endif
 nnoremap <c-t> :call OpenTerminal()<cr>
 
 " Find filename
-nnoremap <c-p> :FZF<cr>
-inoremap <c-p> <esc>:FZF<cr>
+nnoremap <silent> <c-p> :call NerdTreeTabKeep(':FZF')<cr>
+inoremap <c-p> <esc>:call NerdTreeTabKeep(':FZF')<cr>
 
 " Find content
-nnoremap <c-f> :Find<cr>
-inoremap <c-f> <esc>:Find<cr>
+nnoremap <c-f> :call NerdTreeTabKeep(':Find')<cr>
+inoremap <c-f> <esc>:call NerdTreeTabKeep(':Find')<cr>
+
+
+" Reload configuration
+
+nnoremap <leader>vs :source $MYVIMRC<cr>
+
+nnoremap <Home> :call Home()<cr>
+inoremap <Home> <c-O>:call Home()<cr>
+
+nnoremap <leader>h :History<cr>

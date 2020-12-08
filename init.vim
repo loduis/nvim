@@ -1,5 +1,8 @@
 " https://neovim.io/doc/user/vim_diff.html#vim-differences
 
+" Quick variable for fzf ignore files
+let FZF_IGNORE = stdpath('config') . '/.ignore'
+
 " Active mouse
 set mouse=a
 
@@ -67,6 +70,12 @@ set clipboard=unnamed
 
 " Split to right
 set splitright
+
+" Show the tab line
+set showtabline=2
+
+" always show signcolumns
+set signcolumn=yes
 
 " Paint ruler bar for sign on the left of editor
 " set signcolumn=yes
