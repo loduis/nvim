@@ -4,18 +4,17 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Themes
 Plug 'morhetz/gruvbox'
-" Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'shinchu/lightline-gruvbox.vim'
 
 " syntax
 Plug 'sheerun/vim-polyglot'
 
 " status bar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 
-" Plug 'maximbaz/lightline-ale'
-" Plug 'itchyny/lightline.vim'
-" Plug 'mengelbrecht/lightline-bufferline'
+Plug 'maximbaz/lightline-ale'
+Plug 'itchyny/lightline.vim'
 
 " Tree
 Plug 'preservim/nerdtree'
@@ -57,10 +56,33 @@ let g:NERDTreeChDirMode=2
 let NERDTreeQuitOnOpen=1
 
 " Airline configuration
-let g:airline_theme='gruvbox'
-let g:airline#extensions#whitespace#enabled = 1
-let g:airline_skip_empty_sections = 1
-" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_theme='gruvbox'
+" let g:airline#extensions#whitespace#enabled = 1
+" let g:airline_skip_empty_sections = 1
+
+let g:lightline = {
+      \ 'active': {
+      \   'left': [['mode', 'paste'], [], ['relativepath', 'modified']],
+      \   'right': [['kitestatus'], ['filetype', 'percent', 'lineinfo'], ['gitbranch']]
+      \ },
+      \ 'inactive': {
+      \   'left': [['inactive'], ['relativepath']],
+      \   'right': [['bufnum']]
+      \ },
+      \ 'component': {
+      \   'bufnum': '%n',
+      \   'inactive': 'inactive'
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \   'kitestatus': 'kite#statusline'
+      \ },
+      \ 'colorscheme': 'gruvbox',
+      \ 'subseparator': {
+      \   'left': '',
+      \   'right': ''
+      \ }
+      \}
 
 " kite config
 let g:kite_supported_languages = ['javascript', 'python']
@@ -73,6 +95,8 @@ let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow -g "!{.gitignore}" --ig
 let $FZF_DEFAULT_OPTS='--reverse -e'
 set grepprg=rg\ --vimgrep
 
+" Can open files in new tab
+let g:fzf_action = { 'enter': 'tabedit' }
 
 " fugitive always vertical diffing
 set diffopt+=vertical
