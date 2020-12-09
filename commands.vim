@@ -1,4 +1,3 @@
-
 " Rg
 command! -nargs=* -bang Find call RipgrepFzf(<q-args>, <bang>0)
 
@@ -15,7 +14,7 @@ augroup THE_CLEAN
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
 
-autocmd VimEnter * call NERDTreeAddKeyMap({ 'key': '<2-LeftMouse>', 'scope': "FileNode", 'callback': "OpenInTab", 'override':1 })
+" autocmd VimEnter * call NERDTreeAddKeyMap({ 'key': '<2-LeftMouse>', 'scope': "FileNode", 'callback': "OpenInTab", 'override':1 })
 
 " Reload config on save vimrc
 " autocmd BufWritePost *.vim :so $MYVIMRC

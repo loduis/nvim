@@ -38,6 +38,10 @@ Plug 'yggdroot/indentline'
 " git
 Plug 'tpope/vim-fugitive'
 
+" Buffer tabs
+
+Plug 'ap/vim-buftabline'
+
 call plug#end()
 
 " Themes
@@ -50,10 +54,10 @@ let NERDTreeAutoDeleteBuffer=1
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 let NERDTreeShowLineNumbers=1
-let NERDTreeMapOpenInTab='<ENTER>'
+" let NERDTreeMapOpenInTab='<ENTER>'
 let g:nerdtree_tabs_focus_on_files=1
-let g:NERDTreeChDirMode=2
-let NERDTreeQuitOnOpen=1
+" let g:NERDTreeChDirMode=2
+" let NERDTreeQuitOnOpen=1
 
 " Airline configuration
 " let g:airline_theme='gruvbox'
@@ -91,12 +95,12 @@ let g:kite_supported_languages = ['javascript', 'python']
 " You can create one file in ~/.ignore for global ignore files
 " https://dev.to/matrixersp/how-to-use-fzf-with-ripgrep-to-selectively-ignore-vcs-files-4e27
 " See the comments y this post
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow -g "!{.gitignore}" --ignore-file ' . FZF_IGNORE
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow -g "!{.gitignore}" --ignore-file ' . g:FZF_IGNORE
 let $FZF_DEFAULT_OPTS='--reverse -e'
 set grepprg=rg\ --vimgrep
 
 " Can open files in new tab
-let g:fzf_action = { 'enter': 'tabedit' }
+" let g:fzf_action = { 'enter': 'tabedit' }
 
 " fugitive always vertical diffing
 set diffopt+=vertical

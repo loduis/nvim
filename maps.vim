@@ -6,8 +6,8 @@ nnoremap <c-s> :w<cr>
 inoremap <c-s> <esc>:w<cr>a
 
 " Quit
-noremap <c-q> <esc>:q<cr>
-inoremap <c-q> <esc>:q<cr>
+noremap <c-q> :call Kwbd(1)<cr>
+inoremap <c-q> <esc>:call Kwbd(1)<cr>
 
 " Copy to clipboard
 nnoremap Y gg0VGy<esc><c-o>
@@ -57,3 +57,6 @@ nnoremap <Home> :call Home()<cr>
 inoremap <Home> <c-O>:call Home()<cr>
 
 nnoremap <leader>h :History<cr>
+
+" Quick switch to ts 2
+nnoremap <leader>t2 :setl ts=2 sw=2 cc=80<cr>

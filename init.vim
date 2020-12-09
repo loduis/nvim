@@ -1,7 +1,7 @@
 " https://neovim.io/doc/user/vim_diff.html#vim-differences
 
 " Quick variable for fzf ignore files
-let FZF_IGNORE = stdpath('config') . '/.ignore'
+let g:FZF_IGNORE = stdpath('config') . '/.ignore'
 
 " Active mouse
 set mouse=a
@@ -70,6 +70,9 @@ set clipboard=unnamed
 
 " Split to right
 set splitright
+
+" Split to bottom
+set splitbelow
 
 " Show the tab line
 set showtabline=2
