@@ -13,8 +13,3 @@ augroup THE_CLEAN
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
-
-" autocmd VimEnter * call NERDTreeAddKeyMap({ 'key': '<2-LeftMouse>', 'scope': "FileNode", 'callback': "OpenInTab", 'override':1 })
-
-" Reload config on save vimrc
-" autocmd BufWritePost *.vim :so $MYVIMRC

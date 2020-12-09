@@ -42,12 +42,6 @@ fun! OpenTerminal()
   endif
 endfun
 
-func TermEnter()
-  startinsert!
-  startinsert!
-  echo 'Terminal enter.'
-endfunc
-
 func! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always -g "!{.gitignore}"  --ignore-file ' . g:FZF_IGNORE . ' --smart-case -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
@@ -69,11 +63,6 @@ func Home()
    else
       normal 0
    endif
-endfunc
-
-" NerdTree open in tab on mouse double click
-func! OpenInTab(node)
-    call a:node.activate({'reuse': 'all', 'where': 't'})
 endfunc
 
 " if the currenct buffer is NerdTree move the next buffer
