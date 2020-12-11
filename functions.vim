@@ -21,8 +21,7 @@ fun! OpenTerminal()
     execute "q"
   else
     " open terminal
-    execute "sp term://bash"
-    execute "resize 5"
+    execute "vsp term://bash"
 
     " turn off numbers
     execute "set nonu"

@@ -9,7 +9,12 @@ autocmd FileType python let b:coc_suggest_disable = 1
 autocmd FileType javascript let b:coc_suggest_disable = 1
 autocmd FileType scss setl iskeyword+=@-@
 
+augroup THE_TERMINAL | au!
+    autocmd TermOpen * nnoremap <buffer><LeftRelease> <LeftRelease>i
+    " more stuff
+augroup end
+
 augroup THE_CLEAN
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
-augroup END
+augroup end
