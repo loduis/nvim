@@ -5,42 +5,6 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 
-" From https://github.com/nschurmann/configs/blob/master/.vim/maps.vim
-fun! OpenTerminal()
-  " move to right most buffer
-  execute "normal \<C-l>"
-  execute "normal \<C-l>"
-  execute "normal \<C-l>"
-  execute "normal \<C-l>"
-
-  let bufNum = bufnr("%")
-  let bufType = getbufvar(bufNum, "&buftype", "not found")
-
-  if bufType == "terminal"
-    " close existing terminal
-    execute "normal q"
-  else
-    " open terminal
-    execute "vsp term://bash"
-
-    " turn off numbers
-    " execute "set nonu"
-    " execute "set nornu"
-    " execute "call lightline#disable()"
-
-    " toggle insert on enter/exit
-    " silent au BufLeave <buffer> stopinsert!
-    " silent au BufWinEnter,WinEnter <buffer> startinsert!
-
-    " set maps inside terminal buffer
-    " execute "tnoremap <buffer> <C-h> <C-\\><C-n><C-w><C-h>"
-    " execute "tnoremap <buffer> <C-t> <C-\\><C-n>:q<CR>"
-    " execute "tnoremap <buffer> <C-\\><C-\\> <C-\\><C-n>"
-
-    " startinsert!
-  endif
-endfun
-
 func! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always -g "!{.gitignore}"  --ignore-file ' . g:FZF_IGNORE . ' --smart-case -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
