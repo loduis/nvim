@@ -89,3 +89,4 @@ set grepprg=rg\ --vimgrep
 
 " fugitive always vertical diffing
 set diffopt+=vertical
+

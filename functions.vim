@@ -18,26 +18,26 @@ fun! OpenTerminal()
 
   if bufType == "terminal"
     " close existing terminal
-    execute "q"
+    execute "normal q"
   else
     " open terminal
     execute "vsp term://bash"
 
     " turn off numbers
-    execute "set nonu"
-    execute "set nornu"
+    " execute "set nonu"
+    " execute "set nornu"
     " execute "call lightline#disable()"
 
     " toggle insert on enter/exit
-    silent au BufLeave <buffer> stopinsert!
-    silent au BufWinEnter,WinEnter <buffer> startinsert!
+    " silent au BufLeave <buffer> stopinsert!
+    " silent au BufWinEnter,WinEnter <buffer> startinsert!
 
     " set maps inside terminal buffer
-    execute "tnoremap <buffer> <C-h> <C-\\><C-n><C-w><C-h>"
-    execute "tnoremap <buffer> <C-t> <C-\\><C-n>:q<CR>"
-    execute "tnoremap <buffer> <C-\\><C-\\> <C-\\><C-n>"
+    " execute "tnoremap <buffer> <C-h> <C-\\><C-n><C-w><C-h>"
+    " execute "tnoremap <buffer> <C-t> <C-\\><C-n>:q<CR>"
+    " execute "tnoremap <buffer> <C-\\><C-\\> <C-\\><C-n>"
 
-    startinsert!
+    " startinsert!
   endif
 endfun
 

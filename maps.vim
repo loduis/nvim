@@ -38,7 +38,7 @@ else
 endif
 
 " Terminal handle
-nnoremap <c-t> :call OpenTerminal()<cr>
+nnoremap <c-t> :vsp term://bash<cr>
 
 " Find filename
 nnoremap <silent> <c-p> :call NerdTreeTabKeep(':FZF')<cr>
