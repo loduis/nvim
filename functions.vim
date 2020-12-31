@@ -1,4 +1,5 @@
 " From https://github.com/awesome-streamers/awesome-streamerrc/blob/master/ThePrimeagen/init.vim#L284
+let s:fzf_last_query = ''
 fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e

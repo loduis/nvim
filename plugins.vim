@@ -77,7 +77,7 @@ let g:lightline = {
       \}
 
 " kite config
-let g:kite_supported_languages = ['javascript', 'python']
+let g:kite_supported_languages = ['javascript', 'python', 'php']
 
 " fzf
 " You can create one file in ~/.ignore for global ignore files
@@ -85,6 +85,7 @@ let g:kite_supported_languages = ['javascript', 'python']
 " See the comments y this post
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow -g "!{.gitignore}" --ignore-file ' . g:FZF_IGNORE
 let $FZF_DEFAULT_OPTS='--reverse -e'
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 set grepprg=rg\ --vimgrep
 
 " fugitive always vertical diffing

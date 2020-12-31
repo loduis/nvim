@@ -3,11 +3,13 @@ command! -nargs=* -bang Find call RipgrepFzf(<q-args>, <bang>0)
 
 "Set default php space
 au FileType php setl cc=120 sw=4 ts=4
+au BufWinEnter,WinEnter **/views/**/*.php setl cc=80 sw=2 ts=2
 
 " coc
-au FileType python let b:coc_suggest_disable = 1
-au FileType javascript let b:coc_suggest_disable = 1
+" au FileType python let b:coc_suggest_disable = 1
+" au FileType javascript let b:coc_suggest_disable = 1
 au FileType scss setl iskeyword+=@-@
+au FileType php set iskeyword+=$
 
 " https://github.com/neovim/neovim/issues/9483#issuecomment-569417862
 " https://stackoverflow.com/questions/63906439/how-to-disable-line-numbers-in-neovim-terminal
